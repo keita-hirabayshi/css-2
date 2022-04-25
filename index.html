@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<!-- positionの配置のされ方 -->
+<!-- パターン１　　親要素にrelativeを小要素にabsoluteをつける場合 　　　　　　この際親要素の高さは消える　　　　-->
+<!-- パターン２　　親要素内の個要素にもpositonのrelativeをつける場合　　　親要素の高さが戻る　。要素が相対的に配置されるため。 　　　　　　　　　　　　　
+  要素の上下関係を決めるz-indexは対象のタグがposition:static;以外に設定されてる場合のみ機能する。   -->
+<!-- パターン３　　　小要素にstickyをつける場合　　　　設定した値に対し、親要素の上を追従する。　小要素にてtop30と設定した場合、下に30pxを超えて移動すると追従するようになる。 
+  ただし、親要素にoverflow hiddenが設定されている場合、stickyは機能しなくなるので注意-->
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <!-- スタイル読み込み -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <!-- positionとrelative -->
+  <!-- 最初のデフォルト値はposition:static; -->
+  <body>
+    <h2>positionとz-indexについて学ぼう</h2>
+    <section id="container">
+      <div class="div-1">div 1</div>
+      <div class="div-2">div 2</div>
+      <div class="div-3">
+        div 3
+        <div class="div-4">div 4</div>
+      </div>
+    </section>
+  </body>
+</html>
